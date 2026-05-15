@@ -11,4 +11,3 @@ I'll soon try to make it so you can use it in a backdoored game.
 - Draggable UI
 - Server-side execution via RemoteEvent
 - Error handling with pcall
-- 
