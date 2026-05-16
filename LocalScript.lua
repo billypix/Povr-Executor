@@ -3,7 +3,6 @@ local frame = button.Parent
 local textbox = frame:WaitForChild("TextBox")
 local remote = game:GetService("ReplicatedStorage"):WaitForChild("RemoteEvent")
 
--- Dragging
 local UserInputService = game:GetService("UserInputService")
 local dragging = false
 local dragStart = nil
@@ -14,7 +13,7 @@ frame.InputBegan:Connect(function(input)
 		dragging = true
 		dragStart = input.Position
 		startPos = frame.Position
-		
+
 		input.Changed:Connect(function()
 			if input.UserInputState == Enum.UserInputState.End then
 				dragging = false
@@ -30,7 +29,6 @@ UserInputService.InputChanged:Connect(function(input)
 	end
 end)
 
--- Button click
 button.MouseButton1Click:Connect(function()
 	local testcode = textbox.Text
 	remote:FireServer(testcode)
